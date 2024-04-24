@@ -6,11 +6,12 @@ on:
     branches: [ main, master ]
 jobs:
   test:
+    name: Test Suit
     timeout-minutes: 60
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        shard: [1, 2, 3]
+        browser: [chromium, firefox, webkit]
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4
